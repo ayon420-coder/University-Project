@@ -1,0 +1,17 @@
+D:\CSharp Project\Fahad Store\bin\Debug\net8.0-windows\Fahad Store.exe
+D:\CSharp Project\Fahad Store\bin\Debug\net8.0-windows\Fahad Store.deps.json
+D:\CSharp Project\Fahad Store\bin\Debug\net8.0-windows\Fahad Store.runtimeconfig.json
+D:\CSharp Project\Fahad Store\bin\Debug\net8.0-windows\Fahad Store.dll
+D:\CSharp Project\Fahad Store\bin\Debug\net8.0-windows\Fahad Store.pdb
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad_Store.Form1.resources
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad_Store.Properties.Resources.resources
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad Store.csproj.GenerateResource.cache
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad Store.GeneratedMSBuildEditorConfig.editorconfig
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad Store.AssemblyInfoInputs.cache
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad Store.AssemblyInfo.cs
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad Store.csproj.CoreCompileInputs.cache
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad Store.dll
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\refint\Fahad Store.dll
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad Store.pdb
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\Fahad Store.genruntimeconfig.cache
+D:\CSharp Project\Fahad Store\obj\Debug\net8.0-windows\ref\Fahad Store.dll
