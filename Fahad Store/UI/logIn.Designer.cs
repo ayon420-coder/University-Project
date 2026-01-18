@@ -2,15 +2,8 @@ namespace Fahad_Store.UI
 {
     partial class logIn
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,15 +15,11 @@ namespace Fahad_Store.UI
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(logIn));
-            panel1 = new Panel();
-            label1 = new Label();
+            logInPanel = new Panel();
+            storeName = new Label();
             pictureBox1 = new PictureBox();
             username = new TextBox();
             textBox1 = new TextBox();
@@ -38,30 +27,31 @@ namespace Fahad_Store.UI
             passwordLabel = new Label();
             logIn_btn = new Button();
             createAccLink = new LinkLabel();
-            panel1.SuspendLayout();
+            backButton = new Button();
+            logInPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // logInPanel
             // 
-            panel1.BackColor = Color.SaddleBrown;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(1, 1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(800, 100);
-            panel1.TabIndex = 0;
+            logInPanel.BackColor = Color.SaddleBrown;
+            logInPanel.Controls.Add(storeName);
+            logInPanel.Controls.Add(pictureBox1);
+            logInPanel.Location = new Point(1, 1);
+            logInPanel.Name = "logInPanel";
+            logInPanel.Size = new Size(800, 100);
+            logInPanel.TabIndex = 0;
             // 
-            // label1
+            // storeName
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Swis721 Blk BT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.Control;
-            label1.Location = new Point(114, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 58);
-            label1.TabIndex = 3;
-            label1.Text = "Fahad\r\nStore";
+            storeName.AutoSize = true;
+            storeName.Font = new Font("Swis721 Blk BT", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            storeName.ForeColor = SystemColors.Control;
+            storeName.Location = new Point(114, 20);
+            storeName.Name = "storeName";
+            storeName.Size = new Size(94, 58);
+            storeName.TabIndex = 3;
+            storeName.Text = "Fahad\r\nStore";
             // 
             // pictureBox1
             // 
@@ -98,7 +88,7 @@ namespace Fahad_Store.UI
             // 
             // usernameLabel
             // 
-            usernameLabel.Font = new Font("Swis721 Blk BT", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            usernameLabel.Font = new Font("Swis721 BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             usernameLabel.Location = new Point(188, 168);
             usernameLabel.Name = "usernameLabel";
             usernameLabel.RightToLeft = RightToLeft.No;
@@ -109,16 +99,18 @@ namespace Fahad_Store.UI
             // 
             // passwordLabel
             // 
-            passwordLabel.Location = new Point(218, 213);
+            passwordLabel.Font = new Font("Swis721 BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            passwordLabel.Location = new Point(188, 213);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.RightToLeft = RightToLeft.No;
-            passwordLabel.Size = new Size(66, 20);
+            passwordLabel.Size = new Size(96, 20);
             passwordLabel.TabIndex = 4;
             passwordLabel.Text = " Password: ";
             // 
             // logIn_btn
             // 
             logIn_btn.BackColor = Color.SaddleBrown;
+            logIn_btn.Cursor = Cursors.Hand;
             logIn_btn.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             logIn_btn.ForeColor = Color.SeaShell;
             logIn_btn.Location = new Point(299, 292);
@@ -127,7 +119,7 @@ namespace Fahad_Store.UI
             logIn_btn.TabIndex = 5;
             logIn_btn.Text = "Log In";
             logIn_btn.UseVisualStyleBackColor = false;
-            logIn_btn.Click += button1_Click;
+            logIn_btn.Click += logInButton_Click;
             // 
             // createAccLink
             // 
@@ -140,23 +132,37 @@ namespace Fahad_Store.UI
             createAccLink.Text = "Create an account.";
             createAccLink.LinkClicked += createAccLink_LinkClicked;
             // 
+            // backButton
+            // 
+            backButton.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            backButton.ForeColor = Color.SaddleBrown;
+            backButton.Location = new Point(681, 395);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(87, 43);
+            backButton.TabIndex = 8;
+            backButton.Text = "Back";
+            backButton.UseVisualStyleBackColor = true;
+            backButton.Click += btnback_Click;
+            // 
             // logIn
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(backButton);
             Controls.Add(createAccLink);
             Controls.Add(logIn_btn);
             Controls.Add(passwordLabel);
             Controls.Add(usernameLabel);
             Controls.Add(textBox1);
             Controls.Add(username);
-            Controls.Add(panel1);
+            Controls.Add(logInPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "logIn";
             Text = "logIn";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            FormClosed += logIn_FormClosed;
+            logInPanel.ResumeLayout(false);
+            logInPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -164,14 +170,15 @@ namespace Fahad_Store.UI
 
         #endregion
 
-        private Panel panel1;
+        private Panel logInPanel;
         private TextBox username;
         private TextBox textBox1;
         private Label usernameLabel;
         private Label passwordLabel;
         private Button logIn_btn;
-        private Label label1;
+        private Label storeName;
         private PictureBox pictureBox1;
         private LinkLabel createAccLink;
+        private Button backButton;
     }
 }

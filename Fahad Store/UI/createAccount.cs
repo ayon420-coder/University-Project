@@ -1,20 +1,53 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Fahad_Store.UI
 {
-    public partial class Form1 : Form
+    public partial class createAccount : Form
     {
-        public Form1()
+        private dashBoard db;
+        public dashBoard Db1
+        {
+            get { return db; }
+            set { db = value; }
+        }
+
+        private logIn ln;
+
+        private logIn Ln
+        {
+            get { return ln; }
+            set { ln = value; }
+        }
+        public createAccount()
         {
             InitializeComponent();
+        }
+
+        
+
+        public createAccount(logIn ln)
+        {
+            InitializeComponent();
+            this.Ln = ln;
+        }
+
+        private void crtAccBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Ln.Show();
+        }
+
+        private void createAccount_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
