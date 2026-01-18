@@ -1,6 +1,6 @@
 ﻿namespace Fahad_Store
 {
-    partial class Form1
+    partial class dashBoard
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -15,13 +15,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashBoard));
             panel1 = new Panel();
             storeName = new Label();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
+            searchButton = new Button();
             searchBox = new TextBox();
-            button1 = new Button();
+            logInbtn = new Button();
             menuStrip1 = new MenuStrip();
             menuToolStripMenuItem = new ToolStripMenuItem();
             groceryToolStripMenuItem = new ToolStripMenuItem();
@@ -41,6 +41,7 @@
             listView5 = new ListView();
             pictureBox7 = new PictureBox();
             listView4 = new ListView();
+            vScrollBar1 = new VScrollBar();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
@@ -57,9 +58,9 @@
             panel1.BackColor = Color.SaddleBrown;
             panel1.Controls.Add(storeName);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(searchButton);
             panel1.Controls.Add(searchBox);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(logInbtn);
             panel1.Controls.Add(menuStrip1);
             panel1.Location = new Point(-8, 2);
             panel1.Name = "panel1";
@@ -70,17 +71,15 @@
             // 
             storeName.AllowDrop = true;
             storeName.Anchor = AnchorStyles.None;
-            storeName.AutoSize = true;
-            storeName.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            storeName.Font = new Font("Swis721 BlkCn BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             storeName.ForeColor = SystemColors.ButtonFace;
-            storeName.Location = new Point(180, 20);
+            storeName.Location = new Point(180, 7);
             storeName.Name = "storeName";
-            storeName.Size = new Size(88, 19);
+            storeName.Size = new Size(88, 50);
             storeName.TabIndex = 4;
-            storeName.Text = "Fahad Store";
-            storeName.TextAlign = ContentAlignment.MiddleCenter;
+            storeName.Text = "Fahad\r\nStore";
+            storeName.TextAlign = ContentAlignment.MiddleLeft;
             storeName.UseMnemonic = false;
-            storeName.Click += label1_Click;
             // 
             // pictureBox1
             // 
@@ -92,40 +91,40 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // button2
+            // searchButton
             // 
-            button2.Cursor = Cursors.Hand;
-            button2.Font = new Font("Swis721 BlkCn BT", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.SaddleBrown;
-            button2.Location = new Point(842, 13);
-            button2.Name = "button2";
-            button2.Size = new Size(80, 30);
-            button2.TabIndex = 3;
-            button2.Text = "Search";
-            button2.UseVisualStyleBackColor = true;
+            searchButton.Cursor = Cursors.Hand;
+            searchButton.Font = new Font("Swis721 BlkCn BT", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            searchButton.ForeColor = Color.SaddleBrown;
+            searchButton.Location = new Point(842, 13);
+            searchButton.Name = "searchButton";
+            searchButton.Size = new Size(80, 30);
+            searchButton.TabIndex = 3;
+            searchButton.Text = "Search";
+            searchButton.UseVisualStyleBackColor = true;
             // 
             // searchBox
             // 
             searchBox.Cursor = Cursors.IBeam;
             searchBox.Location = new Point(283, 16);
             searchBox.Name = "searchBox";
-            searchBox.PlaceholderText = "Search your product";
+            searchBox.PlaceholderText = " Search your product";
             searchBox.ShortcutsEnabled = false;
             searchBox.Size = new Size(541, 23);
             searchBox.TabIndex = 2;
             // 
-            // button1
+            // logInbtn
             // 
-            button1.Cursor = Cursors.Hand;
-            button1.Font = new Font("Swis721 BlkCn BT", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.SaddleBrown;
-            button1.Location = new Point(1132, 16);
-            button1.Name = "button1";
-            button1.Size = new Size(106, 30);
-            button1.TabIndex = 1;
-            button1.Text = "Log In";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            logInbtn.Cursor = Cursors.Hand;
+            logInbtn.Font = new Font("Swis721 BlkCn BT", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            logInbtn.ForeColor = Color.SaddleBrown;
+            logInbtn.Location = new Point(1132, 16);
+            logInbtn.Name = "logInbtn";
+            logInbtn.Size = new Size(106, 30);
+            logInbtn.TabIndex = 1;
+            logInbtn.Text = "Log In";
+            logInbtn.UseVisualStyleBackColor = true;
+            logInbtn.Click += logInbtn_Click;
             // 
             // menuStrip1
             // 
@@ -153,6 +152,7 @@
             groceryToolStripMenuItem.Name = "groceryToolStripMenuItem";
             groceryToolStripMenuItem.Size = new Size(198, 24);
             groceryToolStripMenuItem.Text = "Grocery";
+            groceryToolStripMenuItem.Click += groceryToolStripMenuItem_Click;
             // 
             // foodToolStripMenuItem
             // 
@@ -167,6 +167,7 @@
             homeAndKitchenToolStripMenuItem.Name = "homeAndKitchenToolStripMenuItem";
             homeAndKitchenToolStripMenuItem.Size = new Size(198, 24);
             homeAndKitchenToolStripMenuItem.Text = "Home and Kitchen";
+            homeAndKitchenToolStripMenuItem.Click += homeAndKitchenToolStripMenuItem_Click;
             // 
             // stationToolStripMenuItem
             // 
@@ -191,7 +192,6 @@
             adsImage.SizeMode = PictureBoxSizeMode.StretchImage;
             adsImage.TabIndex = 6;
             adsImage.TabStop = false;
-            adsImage.Click += pictureBox2_Click;
             // 
             // ads
             // 
@@ -201,12 +201,6 @@
             ads.Images.SetKeyName(0, "Banner-1200x300.jpg");
             ads.Images.SetKeyName(1, "banner-1200x300.png");
             ads.Images.SetKeyName(2, "images.jpg");
-            // 
-            // timer1
-            // 
-            timer1.Enabled = true;
-            timer1.Interval = 3000;
-            timer1.Tick += timer1_Tick_1;
             // 
             // pictureBox3
             // 
@@ -280,12 +274,20 @@
             listView4.TabIndex = 15;
             listView4.UseCompatibleStateImageBehavior = false;
             // 
-            // Form1
+            // vScrollBar1
+            // 
+            vScrollBar1.Location = new Point(1238, 326);
+            vScrollBar1.Name = "vScrollBar1";
+            vScrollBar1.Size = new Size(17, 80);
+            vScrollBar1.TabIndex = 17;
+            // 
+            // dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(1264, 681);
+            Controls.Add(vScrollBar1);
             Controls.Add(pictureBox7);
             Controls.Add(listView4);
             Controls.Add(pictureBox6);
@@ -299,9 +301,9 @@
             Controls.Add(listView1);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "Form1";
+            Name = "dashboard";
             Text = "Fahad Store";
-            Load += Form1_Load;
+            FormClosed += dashboard_FormClosed_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -317,15 +319,9 @@
         }
 
         private Panel panel1;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem menuToolStripMenuItem;
-        private ToolStripMenuItem groceryToolStripMenuItem;
-        private ToolStripMenuItem foodToolStripMenuItem;
-        private ToolStripMenuItem homeAndKitchenToolStripMenuItem;
-        private ToolStripMenuItem stationToolStripMenuItem;
-        private Button button1;
+        private Button logInbtn;
         private TextBox searchBox;
-        private Button button2;
+        private Button searchButton;
         private PictureBox pictureBox1;
         private Label storeName;
         private ListView listView1;
@@ -341,5 +337,12 @@
         private ListView listView5;
         private PictureBox pictureBox7;
         private ListView listView4;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem groceryToolStripMenuItem;
+        private ToolStripMenuItem foodToolStripMenuItem;
+        private ToolStripMenuItem homeAndKitchenToolStripMenuItem;
+        private ToolStripMenuItem stationToolStripMenuItem;
+        private VScrollBar vScrollBar1;
     }
 }
