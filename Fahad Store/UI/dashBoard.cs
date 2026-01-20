@@ -23,6 +23,13 @@ namespace Fahad_Store
             this.Hide();
         }
 
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            var shopping = new shopping(this);
+            shopping.Show();
+            this.Hide();
+        }
+
         private void groceryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new shopping("Grocery").Show();
@@ -42,13 +49,14 @@ namespace Fahad_Store
             this.Hide();
         }
 
-
-        private void dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        private void shopButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var shopping = new shopping(this);
+            shopping.Show();
+            this.Hide();
         }
 
-        private void dashboard_FormClosed_1(object sender, FormClosedEventArgs e)
+        private void dashboard_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
