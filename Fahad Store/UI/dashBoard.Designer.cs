@@ -1,4 +1,4 @@
-﻿namespace Fahad_Store
+namespace Fahad_Store
 {
     partial class dashBoard
     {
@@ -14,7 +14,6 @@
         }
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashBoard));
             panel1 = new Panel();
             storeName = new Label();
@@ -28,28 +27,43 @@
             foodToolStripMenuItem = new ToolStripMenuItem();
             homeAndKitchenToolStripMenuItem = new ToolStripMenuItem();
             stationToolStripMenuItem = new ToolStripMenuItem();
-            listView1 = new ListView();
-            adsImage = new PictureBox();
-            ads = new ImageList(components);
-            timer1 = new System.Windows.Forms.Timer(components);
+            flowLayoutDashboardPanel = new FlowLayoutPanel();
+            pictureBox2 = new PictureBox();
+            product1 = new Panel();
+            product1Price = new Label();
+            product1Name = new Label();
             pictureBox3 = new PictureBox();
+            panel2 = new Panel();
+            label1 = new Label();
+            label2 = new Label();
             pictureBox4 = new PictureBox();
-            listView2 = new ListView();
+            panel3 = new Panel();
+            label3 = new Label();
+            label4 = new Label();
             pictureBox5 = new PictureBox();
-            listView3 = new ListView();
+            panel4 = new Panel();
+            label5 = new Label();
+            label6 = new Label();
             pictureBox6 = new PictureBox();
-            listView5 = new ListView();
+            panel5 = new Panel();
+            label7 = new Label();
+            label8 = new Label();
             pictureBox7 = new PictureBox();
-            listView4 = new ListView();
-            vScrollBar1 = new VScrollBar();
+            shopButton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)adsImage).BeginInit();
+            flowLayoutDashboardPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            product1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
@@ -62,9 +76,10 @@
             panel1.Controls.Add(searchBox);
             panel1.Controls.Add(logInbtn);
             panel1.Controls.Add(menuStrip1);
-            panel1.Location = new Point(-8, 2);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1278, 60);
+            panel1.Size = new Size(1264, 60);
             panel1.TabIndex = 0;
             // 
             // storeName
@@ -73,7 +88,7 @@
             storeName.Anchor = AnchorStyles.None;
             storeName.Font = new Font("Swis721 BlkCn BT", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             storeName.ForeColor = SystemColors.ButtonFace;
-            storeName.Location = new Point(180, 7);
+            storeName.Location = new Point(173, 7);
             storeName.Name = "storeName";
             storeName.Size = new Size(88, 50);
             storeName.TabIndex = 4;
@@ -102,6 +117,7 @@
             searchButton.TabIndex = 3;
             searchButton.Text = "Search";
             searchButton.UseVisualStyleBackColor = true;
+            searchButton.Click += searchButton_Click;
             // 
             // searchBox
             // 
@@ -132,7 +148,7 @@
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             menuStrip1.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem });
-            menuStrip1.Location = new Point(32, 16);
+            menuStrip1.Location = new Point(25, 16);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(66, 27);
             menuStrip1.TabIndex = 0;
@@ -176,144 +192,299 @@
             stationToolStripMenuItem.Size = new Size(198, 24);
             stationToolStripMenuItem.Text = "Stationeries";
             // 
-            // listView1
+            // flowLayoutDashboardPanel
             // 
-            listView1.Location = new Point(45, 432);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(187, 223);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
+            flowLayoutDashboardPanel.AutoScroll = true;
+            flowLayoutDashboardPanel.AutoScrollMargin = new Size(50, 300);
+            flowLayoutDashboardPanel.Controls.Add(pictureBox2);
+            flowLayoutDashboardPanel.Controls.Add(product1);
+            flowLayoutDashboardPanel.Controls.Add(panel2);
+            flowLayoutDashboardPanel.Controls.Add(panel3);
+            flowLayoutDashboardPanel.Controls.Add(panel4);
+            flowLayoutDashboardPanel.Controls.Add(panel5);
+            flowLayoutDashboardPanel.Controls.Add(shopButton);
+            flowLayoutDashboardPanel.Location = new Point(12, 66);
+            flowLayoutDashboardPanel.Name = "flowLayoutDashboardPanel";
+            flowLayoutDashboardPanel.Size = new Size(1240, 603);
+            flowLayoutDashboardPanel.TabIndex = 1;
             // 
-            // adsImage
+            // pictureBox2
             // 
-            adsImage.Location = new Point(30, 88);
-            adsImage.Name = "adsImage";
-            adsImage.Size = new Size(1200, 300);
-            adsImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            adsImage.TabIndex = 6;
-            adsImage.TabStop = false;
+            pictureBox2.Image = Properties.Resources._687f5fb9f7767f9184972de1_LIMITED_DEALS_BANNER_DESTOP_1552;
+            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1234, 200);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
-            // ads
+            // product1
             // 
-            ads.ColorDepth = ColorDepth.Depth32Bit;
-            ads.ImageStream = (ImageListStreamer)resources.GetObject("ads.ImageStream");
-            ads.TransparentColor = Color.Transparent;
-            ads.Images.SetKeyName(0, "Banner-1200x300.jpg");
-            ads.Images.SetKeyName(1, "banner-1200x300.png");
-            ads.Images.SetKeyName(2, "images.jpg");
+            product1.BorderStyle = BorderStyle.Fixed3D;
+            product1.Controls.Add(product1Price);
+            product1.Controls.Add(product1Name);
+            product1.Controls.Add(pictureBox3);
+            product1.Cursor = Cursors.Hand;
+            product1.Location = new Point(10, 256);
+            product1.Margin = new Padding(10, 50, 0, 0);
+            product1.Name = "product1";
+            product1.Size = new Size(200, 250);
+            product1.TabIndex = 1;
+            // 
+            // product1Price
+            // 
+            product1Price.AutoSize = true;
+            product1Price.Font = new Font("Swis721 BlkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            product1Price.ForeColor = Color.SaddleBrown;
+            product1Price.Location = new Point(74, 223);
+            product1Price.Name = "product1Price";
+            product1Price.Size = new Size(43, 16);
+            product1Price.TabIndex = 0;
+            product1Price.Text = "Tk. !45";
+            // 
+            // product1Name
+            // 
+            product1Name.AutoSize = true;
+            product1Name.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            product1Name.Location = new Point(21, 194);
+            product1Name.Name = "product1Name";
+            product1Name.Size = new Size(155, 19);
+            product1Name.TabIndex = 0;
+            product1Name.Text = "Chashi Chinigura Rice";
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(62, 450);
+            pictureBox3.Image = Properties.Resources.GCR_2000;
+            pictureBox3.Location = new Point(12, 14);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(150, 150);
-            pictureBox3.TabIndex = 8;
+            pictureBox3.Size = new Size(173, 166);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(pictureBox4);
+            panel2.Cursor = Cursors.Hand;
+            panel2.Location = new Point(265, 256);
+            panel2.Margin = new Padding(55, 50, 0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 250);
+            panel2.TabIndex = 12;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Swis721 BlkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.SaddleBrown;
+            label1.Location = new Point(74, 223);
+            label1.Name = "label1";
+            label1.Size = new Size(43, 16);
+            label1.TabIndex = 0;
+            label1.Text = "Tk. !55";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(21, 194);
+            label2.Name = "label2";
+            label2.Size = new Size(151, 19);
+            label2.TabIndex = 0;
+            label2.Text = "Fortune Basmati RIce";
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(307, 450);
+            pictureBox4.Image = Properties.Resources.GBR_1000;
+            pictureBox4.Location = new Point(12, 14);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(150, 150);
-            pictureBox4.TabIndex = 10;
+            pictureBox4.Size = new Size(173, 166);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
             // 
-            // listView2
+            // panel3
             // 
-            listView2.Location = new Point(290, 432);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(187, 223);
-            listView2.TabIndex = 9;
-            listView2.UseCompatibleStateImageBehavior = false;
+            panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(pictureBox5);
+            panel3.Cursor = Cursors.Hand;
+            panel3.Location = new Point(520, 256);
+            panel3.Margin = new Padding(55, 50, 0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 250);
+            panel3.TabIndex = 14;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Swis721 BlkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.SaddleBrown;
+            label3.Location = new Point(74, 223);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 16);
+            label3.TabIndex = 0;
+            label3.Text = "Tk. !30";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(48, 194);
+            label4.Name = "label4";
+            label4.Size = new Size(112, 19);
+            label4.TabIndex = 0;
+            label4.Text = "ACI Moshur Dal";
             // 
             // pictureBox5
             // 
-            pictureBox5.Location = new Point(552, 450);
+            pictureBox5.Image = Properties.Resources.GMD_1000;
+            pictureBox5.Location = new Point(12, 14);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(150, 150);
-            pictureBox5.TabIndex = 12;
+            pictureBox5.Size = new Size(173, 166);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 0;
             pictureBox5.TabStop = false;
             // 
-            // listView3
+            // panel4
             // 
-            listView3.Location = new Point(535, 432);
-            listView3.Name = "listView3";
-            listView3.Size = new Size(187, 223);
-            listView3.TabIndex = 11;
-            listView3.UseCompatibleStateImageBehavior = false;
+            panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(label5);
+            panel4.Controls.Add(label6);
+            panel4.Controls.Add(pictureBox6);
+            panel4.Cursor = Cursors.Hand;
+            panel4.Location = new Point(765, 256);
+            panel4.Margin = new Padding(45, 50, 0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(200, 250);
+            panel4.TabIndex = 15;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Swis721 BlkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.SaddleBrown;
+            label5.Location = new Point(74, 223);
+            label5.Name = "label5";
+            label5.Size = new Size(43, 16);
+            label5.TabIndex = 0;
+            label5.Text = "Tk. !15";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(33, 194);
+            label6.Name = "label6";
+            label6.Size = new Size(143, 19);
+            label6.TabIndex = 0;
+            label6.Text = "Loose Egg (1 Dogon)";
             // 
             // pictureBox6
             // 
-            pictureBox6.Location = new Point(798, 450);
+            pictureBox6.Image = Properties.Resources.GE_12;
+            pictureBox6.Location = new Point(12, 14);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(150, 150);
-            pictureBox6.TabIndex = 14;
+            pictureBox6.Size = new Size(173, 166);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 0;
             pictureBox6.TabStop = false;
             // 
-            // listView5
+            // panel5
             // 
-            listView5.Location = new Point(781, 432);
-            listView5.Name = "listView5";
-            listView5.Size = new Size(187, 223);
-            listView5.TabIndex = 13;
-            listView5.UseCompatibleStateImageBehavior = false;
+            panel5.BorderStyle = BorderStyle.Fixed3D;
+            panel5.Controls.Add(label7);
+            panel5.Controls.Add(label8);
+            panel5.Controls.Add(pictureBox7);
+            panel5.Cursor = Cursors.Hand;
+            panel5.Location = new Point(1020, 256);
+            panel5.Margin = new Padding(55, 50, 0, 0);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(200, 250);
+            panel5.TabIndex = 16;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Swis721 BlkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.SaddleBrown;
+            label7.Location = new Point(74, 223);
+            label7.Name = "label7";
+            label7.Size = new Size(43, 16);
+            label7.TabIndex = 0;
+            label7.Text = "Tk. !45";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(21, 194);
+            label8.Name = "label8";
+            label8.Size = new Size(155, 19);
+            label8.TabIndex = 0;
+            label8.Text = "Chashi Chinigura Rice";
             // 
             // pictureBox7
             // 
-            pictureBox7.Location = new Point(1048, 450);
+            pictureBox7.Image = Properties.Resources.GCR_2000;
+            pictureBox7.Location = new Point(12, 14);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(150, 150);
-            pictureBox7.TabIndex = 16;
+            pictureBox7.Size = new Size(173, 166);
+            pictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox7.TabIndex = 0;
             pictureBox7.TabStop = false;
             // 
-            // listView4
+            // shopButton
             // 
-            listView4.Location = new Point(1031, 432);
-            listView4.Name = "listView4";
-            listView4.Size = new Size(187, 223);
-            listView4.TabIndex = 15;
-            listView4.UseCompatibleStateImageBehavior = false;
+            shopButton.BackColor = Color.SaddleBrown;
+            shopButton.Cursor = Cursors.Hand;
+            shopButton.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            shopButton.ForeColor = SystemColors.ButtonFace;
+            shopButton.Location = new Point(600, 536);
+            shopButton.Margin = new Padding(600, 30, 3, 3);
+            shopButton.Name = "shopButton";
+            shopButton.Size = new Size(100, 40);
+            shopButton.TabIndex = 13;
+            shopButton.Text = "Shop More";
+            shopButton.UseVisualStyleBackColor = false;
             // 
-            // vScrollBar1
-            // 
-            vScrollBar1.Location = new Point(1238, 326);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(17, 80);
-            vScrollBar1.TabIndex = 17;
-            // 
-            // dashboard
+            // dashBoard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonFace;
+            BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(1264, 681);
-            Controls.Add(vScrollBar1);
-            Controls.Add(pictureBox7);
-            Controls.Add(listView4);
-            Controls.Add(pictureBox6);
-            Controls.Add(listView5);
-            Controls.Add(pictureBox5);
-            Controls.Add(listView3);
-            Controls.Add(pictureBox4);
-            Controls.Add(listView2);
-            Controls.Add(pictureBox3);
-            Controls.Add(adsImage);
-            Controls.Add(listView1);
+            Controls.Add(flowLayoutDashboardPanel);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "dashboard";
+            Name = "dashBoard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Fahad Store";
-            FormClosed += dashboard_FormClosed_1;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)adsImage).EndInit();
+            flowLayoutDashboardPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            product1.ResumeLayout(false);
+            product1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
         }
@@ -324,25 +495,34 @@
         private Button searchButton;
         private PictureBox pictureBox1;
         private Label storeName;
-        private ListView listView1;
-        private System.Windows.Forms.Timer timer1;
-        public PictureBox adsImage;
-        public ImageList ads;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private ListView listView2;
-        private PictureBox pictureBox5;
-        private ListView listView3;
-        private PictureBox pictureBox6;
-        private ListView listView5;
-        private PictureBox pictureBox7;
-        private ListView listView4;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem menuToolStripMenuItem;
         private ToolStripMenuItem groceryToolStripMenuItem;
         private ToolStripMenuItem foodToolStripMenuItem;
         private ToolStripMenuItem homeAndKitchenToolStripMenuItem;
         private ToolStripMenuItem stationToolStripMenuItem;
-        private VScrollBar vScrollBar1;
+        private FlowLayoutPanel flowLayoutDashboardPanel;
+        private PictureBox pictureBox2;
+        private Panel product1;
+        private Label product1Name;
+        private PictureBox pictureBox3;
+        private Label product1Price;
+        private Panel panel2;
+        private Label label1;
+        private Label label2;
+        private PictureBox pictureBox4;
+        private Panel panel3;
+        private Label label3;
+        private Label label4;
+        private PictureBox pictureBox5;
+        private Panel panel4;
+        private Label label5;
+        private Label label6;
+        private PictureBox pictureBox6;
+        private Panel panel5;
+        private Label label7;
+        private Label label8;
+        private PictureBox pictureBox7;
+        private Button shopButton;
     }
 }
