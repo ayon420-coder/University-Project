@@ -1,19 +1,27 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Fahad_Store.UI
 {
-    public partial class logIn : Form
+    public partial class logIn: Form
     {
         private dashBoard db;
+        private DataAccess da;
 
+        public DataAccess Da
+        {
+            get { return da; } 
+            set { da = value; }
+        }
         public dashBoard Db
         {
             get { return db; }
@@ -30,34 +38,66 @@ namespace Fahad_Store.UI
         public logIn()
         {
             InitializeComponent();
+            this.Da = new DataAccess();
         }
 
         public logIn(dashBoard db)
         {
             InitializeComponent();
+            this.da = new DataAccess();
             this.Db = db;
         }
-
-        public logIn(adminPanel ap)
-        {
-            InitializeComponent();
-            this.Ap = ap;
-        }
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void logInButton_Click(object sender, EventArgs e)
         {
-            OpenAdminPanel();
+            if (string.IsNullOrEmpty(username.Text) || string.IsNullOrEmpty(passwordTb.Text)) 
+            {
+                MessageBox.Show("Please enter the username and password!", "Input required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
+            try
+            {
+                if (username.Text[0] == 'C')
+                {
+                    var query = "Select * from Customers Where Customer_Id = '" + username.Text + "' and Password = '" + passwordTb.Text + "'";
+                    DataTable dt = new DataTable();
+                    dt = Da.ExecuteQueryTable(query);
+
+                    if (dt.Rows.Count != 1)
+                    {
+                        MessageBox.Show("Invalid username or password!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    
+                    string custId = dt.Rows[0]["customer_id"].ToString();
+                    MessageBox.Show("Log In Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    new shopping(this, custId).Show();
+                }
+                else if(username.Text[0] == 'A')
+                {
+                    var query = "Select * from Admins Where Admin_Id = '" + username.Text + "' and Password = '" + passwordTb.Text + "'";
+                    DataTable dt = new DataTable();
+                    dt = Da.ExecuteQueryTable(query);
+                    if (dt.Rows.Count != 1)
+                    {
+                        MessageBox.Show("Invalid username or password!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    string custId = dt.Rows[0]["admin_id"].ToString();
+                    MessageBox.Show("Log In Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    new adminPanel(this, custId).Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("Log In error!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void OpenAdminPanel()
@@ -87,3 +127,4 @@ namespace Fahad_Store.UI
 
     }
 }
+ 
