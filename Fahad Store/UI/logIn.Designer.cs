@@ -22,7 +22,7 @@ namespace Fahad_Store.UI
             storeName = new Label();
             pictureBox1 = new PictureBox();
             username = new TextBox();
-            textBox1 = new TextBox();
+            passwordTb = new TextBox();
             usernameLabel = new Label();
             passwordLabel = new Label();
             logIn_btn = new Button();
@@ -74,17 +74,17 @@ namespace Fahad_Store.UI
             username.Size = new Size(206, 30);
             username.TabIndex = 1;
             // 
-            // textBox1
+            // passwordTb
             // 
-            textBox1.AcceptsReturn = true;
-            textBox1.Cursor = Cursors.IBeam;
-            textBox1.Location = new Point(299, 210);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Password";
-            textBox1.Size = new Size(206, 30);
-            textBox1.TabIndex = 2;
-            textBox1.TextChanged += textBox1_TextChanged;
+            passwordTb.AcceptsReturn = true;
+            passwordTb.Cursor = Cursors.IBeam;
+            passwordTb.Location = new Point(299, 210);
+            passwordTb.Name = "passwordTb";
+            passwordTb.PasswordChar = '*';
+            passwordTb.PlaceholderText = " Password";
+            passwordTb.Size = new Size(206, 23);
+            passwordTb.TabIndex = 2;
+            passwordTb.UseSystemPasswordChar = true;
             // 
             // usernameLabel
             // 
@@ -95,7 +95,6 @@ namespace Fahad_Store.UI
             usernameLabel.Size = new Size(96, 20);
             usernameLabel.TabIndex = 3;
             usernameLabel.Text = "Username: ";
-            usernameLabel.Click += label1_Click;
             // 
             // passwordLabel
             // 
@@ -154,11 +153,12 @@ namespace Fahad_Store.UI
             Controls.Add(logIn_btn);
             Controls.Add(passwordLabel);
             Controls.Add(usernameLabel);
-            Controls.Add(textBox1);
+            Controls.Add(passwordTb);
             Controls.Add(username);
             Controls.Add(logInPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "logIn";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "logIn";
             FormClosed += logIn_FormClosed;
             logInPanel.ResumeLayout(false);
@@ -172,7 +172,7 @@ namespace Fahad_Store.UI
 
         private Panel logInPanel;
         private TextBox username;
-        private TextBox textBox1;
+        private TextBox passwordTb;
         private Label usernameLabel;
         private Label passwordLabel;
         private Button logIn_btn;
