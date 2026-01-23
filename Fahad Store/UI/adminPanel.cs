@@ -5,11 +5,18 @@ using System.Data.SqlTypes;
 
 namespace Fahad_Store.UI
 {
-    public partial class adminPanel: Form
+    public partial class adminPanel : Form
     {
         public logIn ln { get; set; }
         public DataAccess Da { get; set; }
         public string Customer_id { get; set; }
+        private databaseEdit dbEdit;
+
+        public databaseEdit DbEdit
+        {
+            get { return dbEdit; }
+            set { dbEdit = value; }
+        }
 
         public adminPanel()
         {
@@ -56,7 +63,7 @@ namespace Fahad_Store.UI
 
         private void customerButton_Click(object sender, EventArgs e)
         {
-            var sql = "SELECT * FROM Customers";
+            var sql = "Select Customer_Id, Username, Gender, Date_of_Birth, Address, Contact from Customers";
             var dt = Da.ExecuteQueryTable(sql);
             dataGridView1.DataSource = dt;
             this.dataGridView1.Refresh();
@@ -68,6 +75,46 @@ namespace Fahad_Store.UI
             var dt = Da.ExecuteQueryTable(sql);
             dataGridView1.DataSource = dt;
             this.dataGridView1.Refresh();
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+            string columnName = dataGridView1.Columns[0].Name;
+
+            try
+            {
+                if (columnName == "Customer_Id")
+                {
+                    var sql = "Select Customer_Id, Username, Gender, Date_of_Birth, Address, Contact from Customers where customer_id like '%" + searchBox.Text + "'";
+                    var dt = Da.ExecuteQueryTable(sql);
+                    dataGridView1.DataSource = dt;
+                    this.dataGridView1.Refresh();
+                }
+                else if (columnName == "Product_ID")
+                {
+                    var sql = "SELECT * FROM Products where Product_ID like '%" + searchBox.Text + "'";
+                    var dt = Da.ExecuteQueryTable(sql);
+                    dataGridView1.DataSource = dt;
+                    this.dataGridView1.Refresh();
+                }
+                else if (columnName == "admin_Id")
+                {
+                    var sql = "SELECT * FROM Admins where admin_ID like '%" + searchBox.Text + "'";
+                    var dt = Da.ExecuteQueryTable(sql);
+                    dataGridView1.DataSource = dt;
+                    this.dataGridView1.Refresh();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("An error occurred while searching: " + ex.Message);
+            }
+        }
+
+        private void addEditButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            dbEdit = new databaseEdit(this);
         }
 
         // Minimal safe InitializeComponent so adminPanel can be shown without throwing
