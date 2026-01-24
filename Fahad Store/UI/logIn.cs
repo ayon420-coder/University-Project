@@ -14,7 +14,7 @@ namespace Fahad_Store.UI
 {
     public partial class logIn: Form
     {
-        private dashBoard db;
+        private dashboard db;
         private DataAccess da;
 
         public DataAccess Da
@@ -128,3 +128,4 @@ namespace Fahad_Store.UI
     }
 }
  
+
