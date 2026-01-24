@@ -1,4 +1,4 @@
-﻿namespace Fahad_Store.UI
+namespace Fahad_Store.UI
 {
     partial class adminPanel : Form
     {
@@ -38,8 +38,6 @@
             backButton = new Button();
             dataGridView1 = new DataGridView();
             searchBox = new TextBox();
-            searchButton = new Button();
-            addEditButton = new Button();
             apPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -92,6 +90,7 @@
             adminButton.TabIndex = 2;
             adminButton.Text = "Admin";
             adminButton.UseVisualStyleBackColor = false;
+            adminButton.Click += adminButton_Click;
             // 
             // customerButton
             // 
@@ -105,6 +104,7 @@
             customerButton.TabIndex = 3;
             customerButton.Text = "Customer";
             customerButton.UseVisualStyleBackColor = false;
+            customerButton.Click += customerButton_Click;
             // 
             // productButton
             // 
@@ -118,6 +118,7 @@
             productButton.TabIndex = 4;
             productButton.Text = "Product";
             productButton.UseVisualStyleBackColor = false;
+            productButton.Click += productButton_Click;
             // 
             // backButton
             // 
@@ -133,12 +134,18 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.AllowUserToOrderColumns = true;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(350, 186);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(847, 414);
             dataGridView1.TabIndex = 6;
+            dataGridView1.CellMouseDoubleClick += dataGridView1_CellMouseDoubleClick;
             // 
             // searchBox
             // 
@@ -146,36 +153,15 @@
             searchBox.Location = new Point(350, 132);
             searchBox.Name = "searchBox";
             searchBox.PlaceholderText = " Search";
-            searchBox.Size = new Size(508, 33);
+            searchBox.Size = new Size(847, 33);
             searchBox.TabIndex = 7;
-            // 
-            // searchButton
-            // 
-            searchButton.Font = new Font("Swis721 BlkCn BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchButton.ForeColor = Color.SaddleBrown;
-            searchButton.Location = new Point(885, 132);
-            searchButton.Name = "searchButton";
-            searchButton.Size = new Size(79, 33);
-            searchButton.TabIndex = 8;
-            searchButton.Text = "Search";
-            searchButton.UseVisualStyleBackColor = true;
-            // 
-            // addEditButton
-            // 
-            addEditButton.Location = new Point(1096, 618);
-            addEditButton.Name = "addEditButton";
-            addEditButton.Size = new Size(101, 38);
-            addEditButton.TabIndex = 9;
-            addEditButton.Text = "Add / Edit";
-            addEditButton.UseVisualStyleBackColor = true;
+            searchBox.TextChanged += searchBox_TextChanged;
             // 
             // adminPanel
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
-            Controls.Add(addEditButton);
-            Controls.Add(searchButton);
             Controls.Add(searchBox);
             Controls.Add(dataGridView1);
             Controls.Add(backButton);
@@ -187,6 +173,8 @@
             Name = "adminPanel";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin Panel";
+            FormClosed += adminPanel_FormClosed;
+            Load += adminPanel_Load;
             apPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -205,7 +193,5 @@
         private Button backButton;
         private DataGridView dataGridView1;
         private TextBox searchBox;
-        private Button searchButton;
-        private Button addEditButton;
     }
 }
