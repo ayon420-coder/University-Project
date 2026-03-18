@@ -1,1 +1,1 @@
-C# Project
+Super Shop Management System
